@@ -70,6 +70,34 @@ app = Flask(__name__)
 
 
 @app.route('/', methods=['GET', 'POST'])
+# def upload_file():
+#     if request.method == 'POST':
+#         if 'file' not in request.files:
+#             return 'No file part'
+#         file = request.files['file']
+#         if file.filename == '':
+#             return 'No selected file'
+#         if file:
+#             try:
+#                 convert_csv_to_fixed_length(
+#                     file, FILE_PATH, format_spec, fixed_fields, field_mapping)
+#             except Exception as e:
+#                 return f'Error processing file: {e}'
+#             return f'''
+#             <!doctype html>
+#             <title>File Converted</title>
+#             <h1>File converted successfully!</h1>
+#             <a href="/download">Click here to download the converted file</a>
+#             '''
+#     return '''
+#     <!doctype html>
+#     <title>Upload a CSV File</title>
+#     <h1>Upload a CSV file to convert</h1>
+#     <form method=post enctype=multipart/form-data>
+#       <input type=file name=file>
+#       <input type=submit value=Upload>
+#     </form>
+#     '''
 def upload_file():
     if request.method == 'POST':
         if 'file' not in request.files:
@@ -86,17 +114,37 @@ def upload_file():
             return f'''
             <!doctype html>
             <title>File Converted</title>
-            <h1>File converted successfully!</h1>
-            <a href="/download">Click here to download the converted file</a>
+            <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <h1 class="text-center">File converted successfully!</h1>
+                        <div class="text-center">
+                            <a href="/download" class="btn btn-success">Click here to download the converted file</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
             '''
     return '''
     <!doctype html>
     <title>Upload a CSV File</title>
-    <h1>Upload a CSV file to convert</h1>
-    <form method=post enctype=multipart/form-data>
-      <input type=file name=file>
-      <input type=submit value=Upload>
-    </form>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h1 class="text-center">Upload a CSV file to convert</h1>
+                <form method=post enctype=multipart/form-data>
+                  <div class="form-group">
+                    <input type=file name=file class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <input type=submit value=Upload class="btn btn-primary">
+                  </div>
+                </form>
+            </div>
+        </div>
+    </div>
     '''
 
 
