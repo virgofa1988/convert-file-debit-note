@@ -113,38 +113,50 @@ def upload_file():
                 return f'Error processing file: {e}'
             return f'''
             <!doctype html>
-            <title>File Converted</title>
-            <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-6">
-                        <h1 class="text-center">File converted successfully!</h1>
-                        <div class="text-center">
-                            <a href="/download" class="btn btn-success">Click here to download the converted file</a>
+            <html>
+            <head>
+                <title>File Converted</title>
+                <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+            </head>
+            <body>
+                <div class="container d-flex align-items-center" style="min-height: 100vh;">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <h1 class="text-center">File converted successfully!</h1>
+                            <div class="text-center">
+                                <a href="/download" class="btn btn-success">Click here to download the converted file</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </body>
+            </html>
             '''
     return '''
     <!doctype html>
-    <title>Upload a CSV File</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <h1 class="text-center">Upload a CSV file to convert</h1>
-                <form method=post enctype=multipart/form-data>
-                  <div class="form-group">
-                    <input type=file name=file class="form-control">
-                  </div>
-                  <div class="form-group">
-                    <input type=submit value=Upload class="btn btn-primary">
-                  </div>
-                </form>
+    <html>
+    <head>
+        <title>Upload a CSV File</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container d-flex align-items-center" style="min-height: 100vh;">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <h1 class="text-center">Upload a CSV file to convert</h1>
+                    <form method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <input type="file" name="file" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Upload" class="btn btn-primary">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
+    </body>
+    </html>
     '''
 
 
