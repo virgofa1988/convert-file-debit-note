@@ -18,7 +18,7 @@ fixed_fields = {
 }
 # Mapping from positions in the fixed-length text file to CSV field names
 field_mapping = {
-    2: 'Service_Group',  # TRANS_ID - DX Number
+    2: 'DX_Number',  # TRANS_ID - DX Number
     3: 'Branch_Code',  # 'BRANCH_CODE',
     4: 'Surcharges_Date',  # 'TRANS_DATE', Format YYYYMMDD
     5: 'Statement_Details',  # 'TRANS_DESCR'
