@@ -115,7 +115,7 @@ def upload_file():
             <!doctype html>
             <title>File Converted</title>
             <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-            <div class="container d-flex align-items-center" style="min-height: 100vh;">
+            <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-6">
                         <h1 class="text-center">File converted successfully!</h1>
@@ -130,7 +130,7 @@ def upload_file():
     <!doctype html>
     <title>Upload a CSV File</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <div class="container d-flex align-items-center" style="min-height: 100vh;">
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <h1 class="text-center">Upload a CSV file to convert</h1>
